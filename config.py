@@ -1,7 +1,10 @@
 import os 
 import json
 
-letter_values = {
+
+DICTIONARY_FILENAME = 'dictionary.json'
+
+letter_values = { # Blank caractere can be represented by '?', '-' or '*'
     '?': 0,
     '-': 0,
     '*': 0,
@@ -32,3 +35,4 @@ letter_values = {
     'Y': 10,
     'Z': 10
 }
+
