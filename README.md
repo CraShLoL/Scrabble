@@ -8,11 +8,16 @@ I would to give a particular thanks to the author or
 - http://stevehanov.ca/blog/index.php?id=115
 
 
-## Data architecture:
+## Data architecture
 
 A simple list or dictionnary would take too much space and too much time to itterate on.  
 A tree or trie could do the job, but a Dawg (Directed Acyclic Word Graph)  seems to be better because it is taking way less places and it's easier to browse for a word we are looking for.  
 (This is what I understood, feel free to correct me !)  
+
+## Backtracking
+
+"Backtracking is an algorithmic-technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point of time (by time, here, is referred to the time elapsed till reaching any level of the search tree)."   
+[https://www.geeksforgeeks.org/backtracking-introduction/#:~:text=Backtracking%20is%20an%20algorithmic%2Dtechnique,reaching%20any%20level%20of%20the]
 
 ## Dawg - Directed Acyclic Word Graph 
 A Dawg is a particuliar data structure really powerfull for indexing text, which is perfect for our Scrabble.  
