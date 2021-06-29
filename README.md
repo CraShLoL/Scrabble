@@ -11,11 +11,11 @@ I would to give a particular thanks to the author or
 ## Data architecture:
 
 A simple list or dictionnary would take too much space and too much time to itterate on.  
-A tree or trie could do the job, but a dawg seems to be better because it is taking way less places and it's easier to browse for a word we are looking for.  
+A tree or trie could do the job, but a Dawg (Directed Acyclic Word Graph)  seems to be better because it is taking way less places and it's easier to browse for a word we are looking for.  
 (This is what I understood, feel free to correct me !)  
 
 ## Dawg - Directed Acyclic Word Graph 
-A Dawg (Directed Acyclic Word Graph) is a particuliar data structure really powerfull for indexing text, which is perfect for a Scrabble.  
+A Dawg is a particuliar data structure really powerfull for indexing text, which is perfect for our Scrabble.  
 
 If you are interested in building you Dawg here is how to do :  
 
