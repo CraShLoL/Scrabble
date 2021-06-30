@@ -36,7 +36,6 @@ def solver(dawg,letters):
         
         
 ##Other approach with recursive function 
-
 def solver2(dawg,letters):
 
     node = dawg.root
@@ -52,34 +51,34 @@ def solver2(dawg,letters):
 
 
             actualword = letter
-            remindingletters.remove(letter)
+            remindinglettersbis = remindingletters.copy()
+            remindinglettersbis.remove(letter)
             node = node.edges[letter] # La node devient l'enfant
             print("mot actuel:",actualword)
-            print("lettre restante",remindingletters)
+            print("lettre restante",remindinglettersbis)
+            next_node(node,actualword,remindinglettersbis,list_words)
+    return list_words
 
 
-            next_node(node,actualword,remindingletters)
+def next_node(node,actualword,remindingletters,list_words):
 
-
-
-def next_node(node,actualword,remindingletters):
-
-    print(node.edges.items())
+    actualword = actualword
+    remindingletters = remindingletters
+    print("lettre suivante possible;",node.edges.items())
     print("mot actuel::",actualword)
     for label,child in sorted(node.edges.items()):
         if label in remindingletters:
-            actualword += label
-            remindingletters.remove(label)
+            actualword2 = actualword + label ## test
+            remindingletters2 = remindingletters.copy()
+            remindingletters2.remove(label)
+            
             node = child # on descend d'un etage dans le dawg
-
-            next_node(node,actualword,remindingletters)
+            if node.final:
+                list_words.append(actualword2)
+            next_node(node,actualword2,remindingletters2,list_words)
 
             print("mot actuel:",actualword)
             print("lettre restante",remindingletters)
 
         else :
-            print(label,"pas dedans ")
-
-        
-    return list_words
-
+            print(label,"pas dedans le rake ")
