@@ -34,5 +34,52 @@ def solver(dawg,letters):
         print("wow")
         list_words.append(actualword)
         
+        
+##Other approach with recursive function 
+
+def solver2(dawg,letters):
+
+    node = dawg.root
+
+    list_words = []
+    actualword = ""
+    remindingletters = list(letters)
+
+    for letter in letters: # 1ere lettre qui va composer les mots
+        node = dawg.root
+
+        if letter in node.edges:
+
+
+            actualword = letter
+            remindingletters.remove(letter)
+            node = node.edges[letter] # La node devient l'enfant
+            print("mot actuel:",actualword)
+            print("lettre restante",remindingletters)
+
+
+            next_node(node,actualword,remindingletters)
+
+
+
+def next_node(node,actualword,remindingletters):
+
+    print(node.edges.items())
+    print("mot actuel::",actualword)
+    for label,child in sorted(node.edges.items()):
+        if label in remindingletters:
+            actualword += label
+            remindingletters.remove(label)
+            node = child # on descend d'un etage dans le dawg
+
+            next_node(node,actualword,remindingletters)
+
+            print("mot actuel:",actualword)
+            print("lettre restante",remindingletters)
+
+        else :
+            print(label,"pas dedans ")
+
+        
     return list_words
 
