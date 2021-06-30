@@ -1,11 +1,9 @@
 # Scrabble
 
-Implementation of a Scrabble solver 
+I'll try to implement an algortihm to solve scrabble.
+Given a couple of letters it should output the best possibles words according to their points.
 
-## Source 
-I would to give a particular thanks to the author or 
-- https://www.cs.cmu.edu/afs/cs/academic/class/15451-s06/www/lectures/scrabble.pdf
-- http://stevehanov.ca/blog/index.php?id=115
+Following the amazing content available here : https://www.cs.cmu.edu/afs/cs/academic/class/15451-s06/www/lectures/scrabble.pdf
 
 
 ## Data architecture
@@ -28,3 +26,4 @@ If you are interested in building you Dawg here is how to do :
 
 The algorithm consists of two parts, insertion and minimization. As we loop over the collection of words, we keep track of our position on the graph, as well as the previous word processed. For each new word, we begin by back-tracking to the node representing the common prefix of it and the previous word. As we do so, we minimize the right-hand part of the tree, the suffixes if you will. To minimize, from each node as we back-track, we look to the previously constructed parts of the tree and see if we find an identical one. Nodes are considered identical if they have the same terminal state, same outgoing edges, and for each of those edges, the children of both nodes are identical. Following the minimization to the common prefix, we insert the next word by adding edges and nodes from the current one. The last node is marked as terminal since the word ends there. After we've finished adding all the words, we'll minimize back to the root node."  
 Source : https://jbp.dev/blog/dawg-basics.html
+Implementation : http://stevehanov.ca/blog/index.php?id=115
