@@ -25,8 +25,6 @@ def next_node(node,actualword,remindingletters,list_words):
 
     actualword = actualword
     remindingletters = remindingletters
-    print("lettre suivante possible;",node.edges.items())
-    print("mot actuel::",actualword)
     for label,child in sorted(node.edges.items()):
 
         if remindingletters == []:break # avoid searching if we used all letter
