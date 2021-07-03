@@ -1,4 +1,6 @@
-def solver(dawg,letters):
+from config import word_value
+
+def possible_words(dawg,letters):
     """ Return a list of all possible words made of letters in 'letters' that
     are in the dawg """
     node = dawg.root
@@ -38,3 +40,14 @@ def next_node(node,actualword,remindingletters,list_words):
             if node.final:
                 list_words.append(actualword2)
             next_node(node,actualword2,remindingletters2,list_words)
+
+def solver(dawg,letters :str):
+
+    word_dict = {}
+    word_list = possible_words(dawg,letters)
+
+    for word in word_list:
+        word_dict[word] = word_value(word)
+
+    a = sorted(word_dict.items(), key=lambda x: x[1],reverse=True)
+    return a
