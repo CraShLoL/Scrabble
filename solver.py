@@ -42,9 +42,26 @@ def next_node(node,actualword,remindingletters,list_words):
             next_node(node,actualword2,remindingletters2,list_words)
 
 def solver(dawg,letters :str):
+    
+    """ Returning a couple of all possible word that can be done with the letters, ordered by value """
+    
+    number_blank = letters.count('_') + letters.count('?') + letters.count('-')
+    letters = letters.replace('_', '').replace('?','').replace('-','')
+    assert number_blank < 3, "You can't have more than 2 blank"
 
     word_dict = {}
-    word_list = possible_words(dawg,letters)
+    word_list = [] 
+    if number_blank == 0: 
+        word_list = possible_words(dawg,letters)
+        
+    elif number_blank == 1:
+        for _ in 'abcdefghijklmnopqrstuvwxyz':
+            word_list += possible_words(dawg,letters+_)
+            
+    else : 
+        for _ in 'abcdefghijklmnopqrstuvwxyz':
+            for l in 'abcdefghijklmnopqrstuvwxyz':
+                word_list += possible_words(dawg,letters+_+l)
 
     for word in word_list:
         word_dict[word] = word_value(word)
