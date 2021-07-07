@@ -47,6 +47,6 @@ git clone https://https://github.com/CraShLoL/Scrabble
 ```
 
 ## Contributions
-Feel free to contribute at any moment ! 
+Feel free to contribute at any moment !  
 In order to decrease computation time I am trying to serialize the Dawg instead of create it each time.
 
