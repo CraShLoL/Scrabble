@@ -10,7 +10,7 @@ Following the amazing content available here : https://www.cs.cmu.edu/afs/cs/aca
 
 * [Data architecture](#Data-architecture)
 * [Backtracking](#Backtracking)
-* [Dawg : Directed Acyclic Word Graph](#Dawg - Directed Acyclic Word Graph)
+* [Dawg - Directed Acyclic Word Graph](#Dawg---Directed-Acyclic-Word-Graph)
 * [Installation](#Installation)
 * [Contributions](#Contributions)
 
@@ -26,7 +26,7 @@ A tree or trie could do the job, but a Dawg (Directed Acyclic Word Graph)  seems
 "Backtracking is an algorithmic-technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point of time (by time, here, is referred to the time elapsed till reaching any level of the search tree)."   
 Source : https://www.geeksforgeeks.org/backtracking-introduction/#:~:text=Backtracking%20is%20an%20algorithmic%2Dtechnique,reaching%20any%20level%20of%20the
 
-## Dawg - Directed Acyclic Word Graph 
+## Dawg - Directed Acyclic Word Graph
 A Dawg is a particuliar data structure really powerfull for indexing text, which is perfect for our Scrabble.  
 
 If you are interested in building you Dawg here is how to do :  
